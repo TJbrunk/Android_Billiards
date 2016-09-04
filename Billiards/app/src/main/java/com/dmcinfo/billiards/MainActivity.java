@@ -1,15 +1,18 @@
 package com.dmcinfo.billiards;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     PopupWindow popUp;
     LinearLayout layout;
@@ -35,29 +38,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void Start_New_Game(View v)
+    public void Start_2P_Game(View v)
     {
-        if (click)
-        {
-            popUp.showAtLocation(mainLayout, Gravity.BOTTOM, 10, 10);
-            popUp.update(50, 50, 300, 80);
-            click = false;
-        }
-        else
-        {
-            popUp.dismiss();
-            click = true;
-        }
+       /* Intent intent = new Intent(this, .class);
+//        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);*/
+    }
 
-
-        params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        tv.setText("Hi this is a sample text for popup window");
-        layout.addView(tv, params);
-        popUp.setContentView(layout);
-        // popUp.showAtLocation(layout, Gravity.BOTTOM, 10, 10);
-        mainLayout.addView(but, params);
-        setContentView(mainLayout);
+    public void Start_3P_Game(View v)
+    {
+        Intent intent = new Intent(this, ThreePlayerActivity.class);
+        startActivity(intent);
     }
 }
