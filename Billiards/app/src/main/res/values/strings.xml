@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Billiards</string>
+    <string name="title_activity_three_player">Three Player</string>
 </resources>

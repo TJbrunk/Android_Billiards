@@ -1,6 +1,6 @@
 package com.dmcinfo.billiards;
 
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,30 +11,32 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
 
+public class FivePlayerActivity extends AppCompatActivity {
 
-public class ThreePlayerActivity extends Activity {
-
-    private Spinner player_low, player_mid, player_high;
-    private Spinner player_first, player_second, player_third;
+    private Spinner player_first, player_second, player_third, player_fourth, player_fifth;
+    private Spinner player_1, player_2, player_3, player_4, player_5;
     private PoolBall[] balls;
-    private ArrayList players, groups;
+    private ArrayList players, player_group;
     private DBPlayer db_player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_five_player);
 
-        setContentView(R.layout.activity_three_player);
+        // Get refs to the player/ball assignments spinners
+        player_1 = (Spinner) findViewById(R.id.player_1);
+        player_2 = (Spinner) findViewById(R.id.player_2);
+        player_3 = (Spinner) findViewById(R.id.player_3);
+        player_4 = (Spinner) findViewById(R.id.player_4);
+        player_5 = (Spinner) findViewById(R.id.player_5);
 
-        // Get refs to the player/ball assignment spinners
-        player_low = (Spinner) findViewById(R.id.player_low);
-        player_mid = (Spinner) findViewById(R.id.player_mid);
-        player_high = (Spinner) findViewById(R.id.player_high);
-
-        // Get refs to the player order spinners at the bottom of the screen
+        // Get refs to the player order spinners
         player_first = (Spinner) findViewById(R.id.first_player);
         player_second = (Spinner) findViewById(R.id.second_player);
         player_third = (Spinner) findViewById(R.id.third_player);
+        player_fourth = (Spinner) findViewById(R.id.fourth_player);
+        player_fifth = (Spinner) findViewById(R.id.fifth_player);
 
         // Initialize the pool ball array
         initBalls();
@@ -56,8 +58,11 @@ public class ThreePlayerActivity extends Activity {
 
     // The pool ball images call this function when they're clicked
     public void toggle(View ball) {
+        // get the ball number (as a string) from the ball ID
         String ball_string = ball.getResources().getResourceName(ball.getId()).split("_")[1];
+        // convert the ball number string to an integer, decrement because the array is 0 indexed
         int ball_num = Integer.parseInt(ball_string) - 1;
+        // index the balls array using the ball number, and toggle the ball state
         balls[ball_num].ToggleBall();
     }
 
@@ -86,6 +91,8 @@ public class ThreePlayerActivity extends Activity {
         player_first.setAdapter(adapter);
         player_second.setAdapter(adapter);
         player_third.setAdapter(adapter);
+        player_fourth.setAdapter(adapter);
+        player_fifth.setAdapter(adapter);
 
         player_first.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -120,25 +127,57 @@ public class ThreePlayerActivity extends Activity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
+        player_fourth.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                AddPlayerToGame();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+        player_fifth.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                AddPlayerToGame();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
     }
 
     private void AddPlayerToGame()
     {
-        this.groups = new ArrayList();
-        this.groups.clear();
-        this.groups.add(""); // Add blank player to list
+        this.player_group = new ArrayList();
+        this.player_group.clear();
+        this.player_group.add(""); // Add blank player to list
         if (player_first.getSelectedItem() != "") {
-            this.groups.add(player_first.getSelectedItem());
+            this.player_group.add(player_first.getSelectedItem());
         }
         if (player_second.getSelectedItem() != "") {
-            this.groups.add(player_second.getSelectedItem());
+            this.player_group.add(player_second.getSelectedItem());
         }
         if (player_third.getSelectedItem() != "") {
-            this.groups.add(player_third.getSelectedItem());
+            this.player_group.add(player_third.getSelectedItem());
         }
-        ArrayAdapter adapter = new ArrayAdapter(this, com.dmcinfo.billiards.R.layout.player_dropdown_item, groups);
-        player_low.setAdapter(adapter);
-        player_mid.setAdapter(adapter);
-        player_high.setAdapter(adapter);
+        if (player_fourth.getSelectedItem() != "") {
+            this.player_group.add(player_fourth.getSelectedItem());
+        }
+        if (player_fifth.getSelectedItem() != "") {
+            this.player_group.add(player_fifth.getSelectedItem());
+        }
+        ArrayAdapter adapter = new ArrayAdapter(this,
+                                com.dmcinfo.billiards.R.layout.player_dropdown_item,
+                                player_group);
+        player_1.setAdapter(adapter);
+        player_2.setAdapter(adapter);
+        player_3.setAdapter(adapter);
+        player_4.setAdapter(adapter);
+        player_5.setAdapter(adapter);
     }
+
 }
