@@ -14,7 +14,7 @@
     <!-- Assigned players, and ball images -->
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="90">
 
@@ -54,15 +54,16 @@
 
         <!-- Pool ball images -->
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="right">
 
             <!--Balls 1 - 3-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button android:id="@+id/ball_1"
@@ -81,7 +82,8 @@
             <!-- Balls 4-6 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button android:id="@+id/ball_4"
@@ -101,7 +103,8 @@
              <!-- Balls 7 - 9 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button android:id="@+id/ball_7"
@@ -121,7 +124,8 @@
             <!-- Balls 10 - 12 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button android:id="@+id/ball_10"
@@ -140,7 +144,8 @@
             <!--Balls 13 - 15-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button android:id="@+id/ball_13"
@@ -164,19 +169,20 @@
     <LinearLayout
         android:layout_weight="30"
         android:layout_width="match_parent"
-        android:layout_height="1dp">
+        android:layout_height="0dp"
+        android:gravity="bottom">
 
         <Spinner android:id="@+id/first_player"
             style="@style/Players"/>
 
         <Spinner android:id="@+id/second_player"
-            style="@style/Players"/>
+            style="@style/Players" />
 
         <Spinner android:id="@+id/third_player"
             style="@style/Players"/>
 
         <Spinner android:id="@+id/fourth_player"
-            style="@style/Players"/>
+            style="@style/Players" />
 
         <Spinner android:id="@+id/fifth_player"
             style="@style/Players"/>

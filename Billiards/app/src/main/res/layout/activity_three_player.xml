@@ -9,7 +9,7 @@
     <!-- Assigned players, and ball images -->
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="90">
 
@@ -39,15 +39,16 @@
 
         <!-- Pool ball images -->
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="right">
 
             <!-- Balls 1 - 5 -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button android:id="@+id/ball_1"
@@ -74,8 +75,9 @@
 
             <!-- Balls 6 - 10 -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button android:id="@+id/ball_6"
@@ -101,8 +103,9 @@
 
             <!-- Balls 11 - 15 -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button android:id="@+id/ball_11"
@@ -134,16 +137,17 @@
     <LinearLayout
         android:layout_weight="30"
         android:layout_width="match_parent"
-        android:layout_height="1dp">
+        android:layout_height="0dp"
+        android:gravity="bottom">
 
         <Spinner android:id="@+id/first_player"
-            style="@style/Players"/>
+            style="@style/Players" />
 
         <Spinner android:id="@+id/second_player"
             style="@style/Players"/>
 
         <Spinner android:id="@+id/third_player"
-            style="@style/Players"/>
+            style="@style/Players" />
     </LinearLayout>
 
 </LinearLayout>

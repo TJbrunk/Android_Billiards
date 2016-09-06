@@ -26,10 +26,10 @@
             android:layout_weight="3">
 
             <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_margin="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="60dp"
                 android:layout_gravity="center_vertical"
                 android:text="2 Player Game"
                 android:id="@+id/button_start_2p"
@@ -37,10 +37,10 @@
                 android:background="@drawable/two_player"/>
 
             <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_margin="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="60dp"
                 android:layout_gravity="center_vertical"
                 android:text="3 Player Game"
                 android:id="@+id/button_start_3p"
@@ -48,10 +48,10 @@
                 android:background="@drawable/three_player"/>
 
             <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_margin="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="60dp"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/button_start_5p"
                 android:onClick="Start_5P_Game"
