@@ -64,6 +64,8 @@ public class FivePlayerActivity extends AppCompatActivity {
         int ball_num = Integer.parseInt(ball_string) - 1;
         // index the balls array using the ball number, and toggle the ball state
         balls[ball_num].ToggleBall();
+        //CheckPlayerStatus();
+
     }
 
     private void loadPlayers() {
@@ -180,4 +182,14 @@ public class FivePlayerActivity extends AppCompatActivity {
         player_5.setAdapter(adapter);
     }
 
+    private void CheckPlayerStatus(){
+        if(balls[0].IsInPlay || balls[1].IsInPlay || balls[2].IsInPlay){
+            player_first.setBackgroundColor(0xFFAAAAAA);
+            //player_first.setBackgroundColor(getResources().getColor(R.color.colorBackground));
+        }
+        else {
+            player_first.setBackgroundColor(getResources().getColor(R.color.black_overlay));
+            //player_first.setBackgroundColor(0xFFAAAAAA);
+        }
+    }
 }

@@ -11,33 +11,18 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-    PopupWindow popUp;
-    LinearLayout layout;
-    TextView tv;
-    LinearLayout mainLayout;
-    Button but;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
-        popUp = new PopupWindow(this);
-        popUp = new PopupWindow(this);
-        layout = new LinearLayout(this);
-        mainLayout = new LinearLayout(this);
-        tv = new TextView(this);
-        but = new Button(this);
-        but.setText("Click Me");
 
         setContentView(R.layout.activity_main);
     }
 
     public void Start_2P_Game(View v)
     {
-       /* Intent intent = new Intent(this, .class);
-//        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);*/
+        Intent intent = new Intent(this, TwoPlayerActivity.class);
+        startActivity(intent);
     }
 
     public void Start_3P_Game(View v)
