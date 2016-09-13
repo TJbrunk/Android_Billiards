@@ -8,48 +8,30 @@
 
     <!-- Assigned players, and ball images -->
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="90">
 
-        <!-- Assigned players. Vertical column on left side -->
+        <!-- Lows -->
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="40"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp">
 
             <Spinner android:id="@+id/player_low"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:layout_height="wrap_content"
+                android:gravity="left"/>
 
-            <Spinner android:id="@+id/player_mid"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <Spinner android:id="@+id/player_high"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-        </LinearLayout>
-
-        <!-- Pool ball images -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="90"
-            android:orientation="vertical"
-            android:gravity="right">
-
-            <!-- Balls 1 - 5 -->
+            <!-- Pool ball images -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="right">
 
                 <Button android:id="@+id/ball_1"
                     style="@style/BallDisplay"
@@ -73,11 +55,27 @@
 
             </LinearLayout>
 
-            <!-- Balls 6 - 10 -->
+        </LinearLayout>
+
+        <!-- Mids -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp">
+
+            <Spinner android:id="@+id/player_mid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"/>
+
+            <!-- Pool ball images -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="right">
 
                 <Button android:id="@+id/ball_6"
                     style="@style/BallDisplay"
@@ -98,13 +96,29 @@
                 <Button android:id="@+id/ball_10"
                     style="@style/BallDisplay"
                     android:background="@drawable/ten" />
-                </LinearLayout>
 
-            <!-- Balls 11 - 15 -->
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Highs -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp">
+
+            <Spinner android:id="@+id/player_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"/>
+
+            <!-- Pool ball images -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="right">
 
                 <Button android:id="@+id/ball_11"
                     style="@style/BallDisplay"
@@ -125,6 +139,7 @@
                 <Button android:id="@+id/ball_15"
                     style="@style/BallDisplay"
                     android:background="@drawable/fifteen" />
+
             </LinearLayout>
 
         </LinearLayout>
@@ -135,7 +150,7 @@
     <LinearLayout
         android:layout_weight="30"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical">
 
         <Spinner android:id="@+id/first_player"
