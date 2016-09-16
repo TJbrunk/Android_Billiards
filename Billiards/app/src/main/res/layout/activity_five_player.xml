@@ -173,19 +173,19 @@
         android:gravity="bottom">
 
         <Spinner android:id="@+id/first_player"
-            style="@style/Players"/>
+            style="@style/PlayerOrderSpinner"/>
 
         <Spinner android:id="@+id/second_player"
-            style="@style/Players" />
+            style="@style/PlayerOrderSpinner" />
 
         <Spinner android:id="@+id/third_player"
-            style="@style/Players"/>
+            style="@style/PlayerOrderSpinner"/>
 
         <Spinner android:id="@+id/fourth_player"
-            style="@style/Players" />
+            style="@style/PlayerOrderSpinner" />
 
         <Spinner android:id="@+id/fifth_player"
-            style="@style/Players"/>
+            style="@style/PlayerOrderSpinner"/>
     </LinearLayout>
 
 </LinearLayout>

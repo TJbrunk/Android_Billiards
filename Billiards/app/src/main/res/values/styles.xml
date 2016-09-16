@@ -18,14 +18,16 @@
     </style>
 
     <style name="BallDisplay">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:onClick">toggle</item>
-        <item name="android:layout_marginRight">25dp</item>
-        <item name="android:layout_marginLeft">25dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:height">50dp</item>
+        <item name="android:width">50dp</item>
     </style>
 
-    <style name="PlayerSelection">
+    <style name="PlayerAssignmentSpinner">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:minWidth">150dp</item>
@@ -35,14 +37,19 @@
         <item name="android:layout_centerVertical">true</item>
     </style>
 
-    <style name="Players">
+    <style name="PlayerOrderSpinner">
         <item name="android:layout_weight">1</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:minWidth">100dp</item>
-        <item name="android:minHeight">70dp</item>
-        <item name="android:textSize">70dp</item>
-        <item name="android:layout_margin">25dp</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:layout_margin">5dp</item>
     </style>
 
+    <style name="Player_Ball_Display">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
 </resources>

@@ -59,6 +59,7 @@ public class ThreePlayerActivity extends Activity {
         String ball_string = ball.getResources().getResourceName(ball.getId()).split("_")[1];
         int ball_num = Integer.parseInt(ball_string) - 1;
         balls[ball_num].ToggleBall();
+        CheckPlayerStatus(ball_num);
     }
 
     private void loadPlayers() {
@@ -140,5 +141,70 @@ public class ThreePlayerActivity extends Activity {
         player_low.setAdapter(adapter);
         player_mid.setAdapter(adapter);
         player_high.setAdapter(adapter);
+    }
+
+    private void CheckPlayerStatus(int ball_num){
+        String player;
+
+        // Check if the player's balls were just eliminated, or if they are now back in the game,
+        // If either case, get the player's name for the ball that was just toggled
+        if(ball_num <= 4 ){
+            // A ball from the low group was toggled
+            if(PlayerBallCount(0) == 1){
+                player = player_low.getSelectedItem().toString();
+                FindPlayerOrderSPinner(player).setVisibility(View.VISIBLE);
+            }
+            else if(PlayerBallCount(0) == 0){
+                player = player_low.getSelectedItem().toString();
+                FindPlayerOrderSPinner(player).setVisibility(View.INVISIBLE);
+            }
+        }
+        else if(ball_num <= 9){
+            if(PlayerBallCount(1) == 1){
+                player = player_mid.getSelectedItem().toString();
+                FindPlayerOrderSPinner(player).setVisibility(View.VISIBLE);
+            }
+            else if(PlayerBallCount(1) == 0){
+                player = player_mid.getSelectedItem().toString();
+                FindPlayerOrderSPinner(player).setVisibility(View.INVISIBLE);
+            }
+        }
+        else{
+            if(PlayerBallCount(2) == 1){
+                player = player_high.getSelectedItem().toString();
+                FindPlayerOrderSPinner(player).setVisibility(View.VISIBLE);
+            }
+            else if(PlayerBallCount(2) == 0){
+                player = player_high.getSelectedItem().toString();
+                FindPlayerOrderSPinner(player).setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+
+    // group should be 0=Lows, 1=Mids, 2=Highs
+    private int PlayerBallCount(int group){
+        int active_ball_count = 0;
+
+        for(int i = (group * 5); i <= ((group * 5)+4); i++){
+            if(balls[i].IsInPlay){
+                active_ball_count++;
+            }
+        }
+        return active_ball_count;
+    }
+
+    private Spinner FindPlayerOrderSPinner(String player){
+        if(player_first.getSelectedItem().toString() == player){
+            return player_first;
+        }
+        else if(player_second.getSelectedItem().toString() == player){
+            return player_second;
+        }
+        else if(player_third.getSelectedItem().toString() == player){
+            return player_third;
+        }
+        else{
+            return null;
+        }
     }
 }
