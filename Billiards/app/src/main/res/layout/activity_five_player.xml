@@ -3,69 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.dmcinfo.billiards.FivePlayerActivity"
-
     android:orientation="vertical">
 
     <!-- Assigned players, and ball images -->
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="90">
 
-        <!-- Assigned players. Vertical column on left side -->
+        <!-- Low Low's -->
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="40"
-            android:orientation="vertical">
+            style="@style/Player_Ball_Display">
 
-            <Spinner android:id="@+id/player_1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
+            <Spinner android:id="@+id/player_low_low"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"/>
 
-            <Spinner android:id="@+id/player_2"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <Spinner android:id="@+id/player_3"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <Spinner android:id="@+id/player_4"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <Spinner android:id="@+id/player_5"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-        </LinearLayout>
-
-        <!-- Pool ball images -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="right">
-
-            <!--Balls 1 - 3-->
+            <!-- Pool ball images -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right">
 
+                <!--Balls 1 - 3-->
                 <Button android:id="@+id/ball_1"
                     style="@style/BallDisplay"
                     android:background="@drawable/one" />
@@ -79,12 +43,23 @@
                     android:background="@drawable/three" />
             </LinearLayout>
 
+        </LinearLayout>
+
+        <!-- Low's -->
+        <LinearLayout
+            style="@style/Player_Ball_Display">
+
+            <Spinner android:id="@+id/player_low"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"/>
+
             <!-- Balls 4-6 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
 
                 <Button android:id="@+id/ball_4"
                     style="@style/BallDisplay"
@@ -100,12 +75,25 @@
 
             </LinearLayout>
 
-             <!-- Balls 7 - 9 -->
+
+
+        </LinearLayout>
+
+        <!-- Mids -->
+        <LinearLayout
+            style="@style/Player_Ball_Display">
+
+            <Spinner android:id="@+id/player_mid"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"/>
+
+            <!-- Balls 7 - 9 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
 
                 <Button android:id="@+id/ball_7"
                     style="@style/BallDisplay"
@@ -121,12 +109,23 @@
 
             </LinearLayout>
 
+        </LinearLayout>
+
+        <!-- Highs -->
+        <LinearLayout
+            style="@style/Player_Ball_Display">
+
+            <Spinner android:id="@+id/player_high"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"/>
+
             <!-- Balls 10 - 12 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
 
                 <Button android:id="@+id/ball_10"
                     style="@style/BallDisplay"
@@ -141,12 +140,23 @@
                     android:background="@drawable/twelve" />
             </LinearLayout>
 
+        </LinearLayout>
+
+        <!-- High Highs -->
+        <LinearLayout
+            style="@style/Player_Ball_Display">
+
+            <Spinner android:id="@+id/player_high_high"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"/>
+
             <!--Balls 13 - 15-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="end">
 
                 <Button android:id="@+id/ball_13"
                     style="@style/BallDisplay"
@@ -161,6 +171,7 @@
                     android:background="@drawable/fifteen" />
             </LinearLayout>
 
+
         </LinearLayout>
 
     </LinearLayout>
@@ -169,8 +180,8 @@
     <LinearLayout
         android:layout_weight="30"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="bottom">
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
 
         <Spinner android:id="@+id/first_player"
             style="@style/PlayerOrderSpinner"/>

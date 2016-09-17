@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.dmcinfo.billiards.ThreePlayerActivity"
-
     android:orientation="vertical">
 
     <!-- Assigned players, and ball images -->
@@ -60,14 +59,14 @@
             <Spinner android:id="@+id/player_mid"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
-                android:gravity="left"/>
+                android:gravity="start"/>
 
             <!-- Pool ball images -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="right">
+                android:gravity="end">
 
                 <Button android:id="@+id/ball_6"
                     style="@style/BallDisplay"
