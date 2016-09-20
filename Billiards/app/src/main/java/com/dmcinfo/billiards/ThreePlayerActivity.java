@@ -64,18 +64,9 @@ public class ThreePlayerActivity extends Activity {
 
     private void loadPlayers() {
         db_player = new DBPlayer(this);
-        int i = 1;
         this.players = new ArrayList();
-        this.players.clear();
 
-        this.players.add(""); // Add blank player so that none can be selected
-        while (db_player.getPlayer(i) != "none") {
-            this.players.add(this.db_player.getPlayer(i));
-            i += 1;
-        }
-        // order the players alphabetically
-        Collections.sort(players);
-
+        players = db_player.getAllPlayers();
         // Add a few temp guest players
         this.players.add("Guest 1");
         this.players.add("Guest 2");

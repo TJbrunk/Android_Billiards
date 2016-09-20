@@ -19,8 +19,7 @@
 
             <Spinner android:id="@+id/player_low_low"
                 android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:gravity="left"/>
+                android:layout_height="wrap_content" />
 
             <!-- Pool ball images -->
             <LinearLayout
@@ -51,8 +50,7 @@
 
             <Spinner android:id="@+id/player_low"
                 android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:gravity="start"/>
+                android:layout_height="wrap_content" />
 
             <!-- Balls 4-6 -->
             <LinearLayout
@@ -85,8 +83,7 @@
 
             <Spinner android:id="@+id/player_mid"
                 android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:gravity="start"/>
+                android:layout_height="wrap_content" />
 
             <!-- Balls 7 - 9 -->
             <LinearLayout
@@ -117,8 +114,7 @@
 
             <Spinner android:id="@+id/player_high"
                 android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:gravity="start"/>
+                android:layout_height="wrap_content" />
 
             <!-- Balls 10 - 12 -->
             <LinearLayout
@@ -148,8 +144,7 @@
 
             <Spinner android:id="@+id/player_high_high"
                 android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:gravity="start"/>
+                android:layout_height="wrap_content" />
 
             <!--Balls 13 - 15-->
             <LinearLayout
