@@ -10,7 +10,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="90">
 
         <!-- Low Low's -->
         <LinearLayout
@@ -172,9 +173,10 @@
 
     <!-- Player order spinners -->
     <LinearLayout
+        android:layout_weight="30"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="bottom">
+        android:gravity="center_vertical">
 
         <Spinner android:id="@+id/first_player"
             style="@style/PlayerOrderSpinner_xlarge"/>

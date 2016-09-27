@@ -9,7 +9,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 
 public class ThreePlayerActivity extends Activity {
@@ -139,35 +138,65 @@ public class ThreePlayerActivity extends Activity {
 
         // Check if the player's balls were just eliminated, or if they are now back in the game,
         // If either case, get the player's name for the ball that was just toggled
-        if(ball_num <= 4 ){
-            // A ball from the low group was toggled
-            if(PlayerBallCount(0) == 1){
-                player = player_low.getSelectedItem().toString();
-                FindPlayerOrderSPinner(player).setVisibility(View.VISIBLE);
+        switch(ball_num)
+        {
+            case(0):
+            case(1):
+            case(2):
+            case(3):
+            case(4):
+            {
+                // A ball from the low group was toggled
+                if (PlayerBallCount(0) == 1) {
+                    player = player_low.getSelectedItem().toString();
+                    if (player != null && !player.isEmpty()) {
+                        FindPlayerOrderSpinner(player).setVisibility(View.VISIBLE);
+                    }
+                } else if (PlayerBallCount(0) == 0) {
+                    player = player_low.getSelectedItem().toString();
+                    if (player != null && !player.isEmpty()) {
+                        FindPlayerOrderSpinner(player).setVisibility(View.INVISIBLE);
+                    }
+                }
+                break;
             }
-            else if(PlayerBallCount(0) == 0){
-                player = player_low.getSelectedItem().toString();
-                FindPlayerOrderSPinner(player).setVisibility(View.INVISIBLE);
+            case(5):
+            case(6):
+            case(7):
+            case(8):
+            case(9):
+            {
+                if (PlayerBallCount(1) == 1) {
+                    player = player_mid.getSelectedItem().toString();
+                    if (player != null && !player.isEmpty()) {
+                        FindPlayerOrderSpinner(player).setVisibility(View.VISIBLE);
+                    }
+                } else if (PlayerBallCount(1) == 0) {
+                    player = player_mid.getSelectedItem().toString();
+                    if (player != null && !player.isEmpty()) {
+                        FindPlayerOrderSpinner(player).setVisibility(View.INVISIBLE);
+                    }
+                }
+                break;
             }
-        }
-        else if(ball_num <= 9){
-            if(PlayerBallCount(1) == 1){
-                player = player_mid.getSelectedItem().toString();
-                FindPlayerOrderSPinner(player).setVisibility(View.VISIBLE);
-            }
-            else if(PlayerBallCount(1) == 0){
-                player = player_mid.getSelectedItem().toString();
-                FindPlayerOrderSPinner(player).setVisibility(View.INVISIBLE);
-            }
-        }
-        else{
-            if(PlayerBallCount(2) == 1){
-                player = player_high.getSelectedItem().toString();
-                FindPlayerOrderSPinner(player).setVisibility(View.VISIBLE);
-            }
-            else if(PlayerBallCount(2) == 0){
-                player = player_high.getSelectedItem().toString();
-                FindPlayerOrderSPinner(player).setVisibility(View.INVISIBLE);
+            case(10):
+            case(11):
+            case(12):
+            case(13):
+            case(14):
+            {
+                if (PlayerBallCount(2) == 1) {
+                    player = player_high.getSelectedItem().toString();
+                    if (player != null && !player.isEmpty()) {
+                        FindPlayerOrderSpinner(player).setVisibility(View.VISIBLE);
+                    }
+                } else if (PlayerBallCount(2) == 0) {
+                    player = player_high.getSelectedItem().toString();
+                    if (player != null && !player.isEmpty()) {
+                        FindPlayerOrderSpinner(player).setVisibility(View.INVISIBLE);
+                    }
+                }
+                break;
             }
         }
     }
@@ -184,7 +213,7 @@ public class ThreePlayerActivity extends Activity {
         return active_ball_count;
     }
 
-    private Spinner FindPlayerOrderSPinner(String player){
+    private Spinner FindPlayerOrderSpinner(String player){
         if(player_first.getSelectedItem().toString() == player){
             return player_first;
         }

@@ -127,6 +127,7 @@ public class SettingsActvity extends AppCompatActivity {
         player_db.addPlayer("Tim", "Gee");
         player_db.addPlayer("Tyler", "Brink");
         player_db.addPlayer("Cameron", "Fyfe");
+        player_db.addPlayer("Jay", "LaFave");
 
     }
 }
